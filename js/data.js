@@ -34,6 +34,19 @@ const data = {
     },
     {
       "type": "hardware",
+      "title": "Quad Electronic Speed Controller for Brushless DC Motors",
+      "info": "A motor controller board designed to power four brushless DC motors at up to 20A each. Designed to be used in quadcopters, especially the Dronesmith Technologies QuaRK.",
+      "client": "Dronesmith Technologies",
+      "clientLink": "http://dronesmith.io",
+      "date": "January 2015",
+      "categories": [
+        "UAV development"
+      ],
+      "images": [],
+      "previewImage": "quadesc_placeholder.png"
+    },
+    {
+      "type": "hardware",
       "title": "Power Glove Controlled Drone",
       "info": "An overhaul of the iconic Power Glove to allow it to control robots, drones or anything your heart desires. It's so... good.<br />Features custom boards designed to completely replace the original electronics. <a href=\"https://hackaday.io/project/8455-power-glove-universal-hid\">Project on Hackaday.io</a>",
       "client": "Personal project",
@@ -43,11 +56,12 @@ const data = {
         "Retrofitting"
       ],
       "images": [
-        "powerglove.png",
+        "pg_makerfaire.jpg",
         "pg_boards2.jpg",
         "pg_open.jpg"
+        // "powerglove.png"
       ],
-      "previewImage": "powerglove.png"
+      "previewImage": "pg_makerfaire.jpg"
     },
     {
       "type": "hardware",
