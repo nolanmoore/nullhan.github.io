@@ -8,14 +8,11 @@
 * Controller of the myApp
 */
 angular.module('myApp')
-.controller('MainCtrl', function ($resource) {
+.controller('MainCtrl', function ($resource, $sanitize) {
   var vm = this;
 
   vm.init = function() {
-    var data = $resource('projects.json');
-    data.get(function(res) {
-      vm.data = res;
-    });
+    vm.data = data;
   };
 
   vm.init();

@@ -261,20 +261,22 @@
                           <div class="modal-body">
                               <h2>{{project.title}}</h2>
                               <hr class="star-primary">
-                              <img src="img/portfolio/{{project.images[0] || 'comingsoon.png'}}" class="img-responsive img-centered" alt="">
-                              <p>{{project.info}}</p>
+                              <div class="image-carousel">
+                                <div data-ng-repeat="img in project.images">
+                                  <img src="img/portfolio/{{project.images[$index]}}" class="img-responsive img-centered" alt="">
+                                </div>
+                              </div>
+                              <!-- <img src="img/portfolio/{{project.images[0] || 'comingsoon.png'}}" class="img-responsive img-centered" alt=""> -->
+                              <p ng-bind-html="project.info | renderHTMLCorrectly"></p>
                               <ul class="list-inline item-details">
                                   <li>Client:
-                                      <strong><a href="{{project.clientLink || '#'}}">{{project.client}}</a>
-                                      </strong>
+                                      <strong><a href="{{project.clientLink || '#'}}">{{project.client}}</a></strong>
                                   </li>
                                   <li>Date:
-                                      <strong><a href="#">{{project.date}}</a>
-                                      </strong>
+                                      <strong><a href="#">{{project.date}}</a></strong>
                                   </li>
                                   <li>Category:
-                                      <strong><a href="#">{{project.categories[0]}}</a>
-                                      </strong>
+                                      <strong><a href="#">{{project.categories[0]}}</a></strong>
                                   </li>
                               </ul>
                               <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
@@ -289,6 +291,7 @@
     <!-- Angular -->
     <script src="vendor/angular/angular.js"></script>
     <script src="vendor/angular/angular-resource.js"></script>
+    <script src="vendor/angular/angular-sanitize.js"></script>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -309,6 +312,7 @@
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
 
+    <script src="js/data.js"></script>
     <script src="js/app.js"></script>
     <script src="js/controllers/main.controller.js"></script>
 

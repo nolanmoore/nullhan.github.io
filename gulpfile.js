@@ -65,7 +65,9 @@ gulp.task('copy', function() {
           'bower_components/angular/angular.min.js',
           'bower_components/angular/angular.js',
           'bower_components/angular-resource/angular-resource.min.js',
-          'bower_components/angular-resource/angular-resource.js'
+          'bower_components/angular-resource/angular-resource.js',
+          'bower_components/angular-sanitize/angular-sanitize.min.js',
+          'bower_components/angular-sanitize/angular-sanitize.js'
         ])
         .pipe(gulp.dest('vendor/angular'))
 
