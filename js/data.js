@@ -82,7 +82,7 @@ const data = {
       "title": "Happy Hour Finder",
       "info": "A MEAN stack powered webapp that locates the bars nearest to the user and determines which currently have happy hour specials. Data pulled from Yelp using the Fusion API.",
       "client": "Personal project",
-      "clientLink": "",
+      "clientLink": "http://happyhour.nolandoesdev.com/",
       "date": "February 2017",
       "categories": [
         "Web development"
