@@ -8,7 +8,7 @@
 * Controller of the myApp
 */
 angular.module('myApp')
-.controller('MainCtrl', function ($resource, $sanitize, renderHTMLCorrectlyFilter) {
+.controller('MainCtrl', ['$resource', '$sanitize', 'renderHTMLCorrectlyFilter', function ($resource, $sanitize, renderHTMLCorrectlyFilter) {
   var vm = this;
 
   vm.init = function() {
@@ -16,4 +16,4 @@ angular.module('myApp')
   };
 
   vm.init();
-});
+}]);
