@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-ng-app="myApp">
 
 <head>
 
@@ -14,6 +14,10 @@
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Third party styles -->
+    <link href="vendor/slick/slick.css" rel="stylesheet">
+    <link href="vendor/slick/slick-theme.css" rel="stylesheet">
+
     <!-- Theme CSS -->
     <link href="css/freelancer.min.css" rel="stylesheet">
 
@@ -21,6 +25,8 @@
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- <link href="css/app.css" rel="stylesheet"> -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,7 +37,7 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" data-ng-controller="MainCtrl as main">
 
     <!-- Navigation -->
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
@@ -92,64 +98,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                <div class="col-sm-4 portfolio-item" data-ng-repeat="project in main.data.projects">
+                    <a href="#portfolioModal{{$index+1}}" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/luci.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/udev.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/powerglove.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/iotalarmclock.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/happyhour.png" class="img-responsive" alt="">
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal" height="100%">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/halfpastbrew.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/{{project.previewImage || 'comingsoon.png'}}" class="img-responsive" alt="">
                     </a>
                 </div>
             </div>
@@ -290,231 +246,55 @@
     </div>
 
     <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Luci</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/luci.png" class="img-responsive img-centered" alt="">
-                            <p>The Luci flight controller is designed to give drone developers a platform on which to easily create rich IoT-enabled applications. Luci is powered by the PX4 flight stack as well as an Intel Edison co-processor that hosts the user's application and provides Wi-Fi connectivity.</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://dronesmith.io">Dronesmith Technologies</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="#">April 2015</a>
-                                    </strong>
-                                </li>
-                                <li>Category:
-                                    <strong><a href="#">UAV Development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div data-ng-repeat="project in main.data.projects">
+      <div class="portfolio-modal modal fade" id="portfolioModal{{$index+1}}" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-content">
+              <div class="close-modal" data-dismiss="modal">
+                  <div class="lr">
+                      <div class="rl">
+                      </div>
+                  </div>
+              </div>
+              <div class="container">
+                  <div class="row">
+                      <div class="col-lg-8 col-lg-offset-2">
+                          <div class="modal-body">
+                              <h2>{{project.title}}</h2>
+                              <hr class="star-primary">
+                              <img src="img/portfolio/{{project.images[0] || 'comingsoon.png'}}" class="img-responsive img-centered" alt="">
+                              <p>{{project.info}}</p>
+                              <ul class="list-inline item-details">
+                                  <li>Client:
+                                      <strong><a href="{{project.clientLink || '#'}}">{{project.client}}</a>
+                                      </strong>
+                                  </li>
+                                  <li>Date:
+                                      <strong><a href="#">{{project.date}}</a>
+                                      </strong>
+                                  </li>
+                                  <li>Category:
+                                      <strong><a href="#">{{project.categories[0]}}</a>
+                                      </strong>
+                                  </li>
+                              </ul>
+                              <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+       </div>
     </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Power Glove Controlled Drone</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/powerglove.png" class="img-responsive img-centered" alt="">
-                            <p>An overhaul of the iconic Power Glove to allow it to control robots, drones or anything your heart desires. It's so... good.<br />Features custom boards designed to completely replace the original electronics. <a href="https://hackaday.io/project/8455-power-glove-universal-hid">Project on Hackaday.io</a></p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="https://hackaday.io/project/8455-power-glove-universal-hid">Personal project</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="#">May 2016</a>
-                                    </strong>
-                                </li>
-                                <li>Category:
-                                    <strong><a href="#">Retrofitting</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>IoT Alarm Clock</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/comingsoon.png" class="img-responsive img-centered" alt="">
-                            <p>A small project featuring a Wi-Fi enabled snooze button and a Python-based server, all linked by the MQTT messaging protocol.</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="#">Personal project</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="#">2016</a>
-                                    </strong>
-                                </li>
-                                <li>Category:
-                                    <strong><a href="#">IoT</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Happy Hour Finder</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/comingsoon.png" class="img-responsive img-centered" alt="">
-                            <p>A MEAN stack powered webapp that locates the bars nearest to the user and determines which currently have happy hour specials. Data pulled from Yelp using the Fusion API.</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="#">Personal project</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="#">February 2017</a>
-                                    </strong>
-                                </li>
-                                <li>Category:
-                                    <strong><a href="#">Web development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Luci Development Expansion Board</h2>
-                            <img src="img/portfolio/udev.png" class="img-responsive img-centered" alt="">
-                            <hr class="star-primary">
-                            <p>A daughterboard that gives developers access to the expansion connector underneath the Luci flight controller. Also provides additional serial ports for the Intel Edison co-processor and a slot for an optional Skywire LTE modem.</p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="http://dronesmith.io">Dronesmith Technologies</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="#">November 2016</a>
-                                    </strong>
-                                </li>
-                                <li>Category:
-                                    <strong><a href="#">UAV development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <h2>Half Past Brew Webapp</h2>
-                            <hr class="star-primary">
-                            <img src="img/portfolio/comingsoon.png" class="img-responsive img-centered" alt="">
-                            <p>A MEAN-stack based webapp designed to find breweries and taprooms near the user and suggest a beer from each. Data provided by <a href="http://brewerydb.com">BreweryDB.com</a></p>
-                            <ul class="list-inline item-details">
-                                <li>Client:
-                                    <strong><a href="#">Personal project</a>
-                                    </strong>
-                                </li>
-                                <li>Date:
-                                    <strong><a href="#">January 2017</a>
-                                    </strong>
-                                </li>
-                                <li>Category:
-                                    <strong><a href="#">Web development</a>
-                                    </strong>
-                                </li>
-                            </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+    <!-- Angular -->
+    <script src="vendor/angular/angular.js"></script>
+    <script src="vendor/angular/angular-resource.js"></script>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Third party JS -->
+    <script src="vendor/slick/slick.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -528,6 +308,9 @@
 
     <!-- Theme JavaScript -->
     <script src="js/freelancer.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/controllers/main.controller.js"></script>
 
 </body>
 
