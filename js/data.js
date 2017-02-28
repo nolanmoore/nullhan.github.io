@@ -20,8 +20,8 @@ const data = {
     {
       "type": "hardware",
       "status": "Complete",
-      "title": "Luci Development Expansion Board",
-      "info": "A daughterboard that gives developers access to the expansion connector underneath the Luci flight controller. Also provides additional serial ports for the Intel Edison co-processor and a slot for an optional Skywire LTE modem.",
+      "title": "Luci µDev Expansion Board",
+      "info": "The µDev expansion board is a daughterboard that gives developers access to the expansion connector underneath the Luci flight controller. Additionally provides extra serial ports for the Intel Edison co-processor and a slot for an optional Skywire LTE modem.",
       "client": "Dronesmith Technologies",
       "clientLink": "http://dronesmith.io",
       "date": "November 2016",
@@ -37,8 +37,8 @@ const data = {
     {
       "type": "hardware",
       "status": "Complete",
-      "title": "Quad Electronic Speed Controller for Brushless DC Motors",
-      "info": "A motor controller board designed to power four brushless DC motors at up to 20A each. Designed to be used in quadcopters, especially the Dronesmith Technologies QuaRK.",
+      "title": "Qua.R.K. Motor Controller Board",
+      "info": "A quad <abbr title=\"Electronic Speed Controller\" class=\"initialism\">ESC</abbr> motor controller board designed to power four brushless DC motors at up to 20A each. Designed to be used in quadcopters, particularly the Dronesmith Technologies Qua.R.K research platform.",
       "client": "Dronesmith Technologies",
       "clientLink": "http://dronesmith.io",
       "date": "January 2015",
@@ -65,7 +65,6 @@ const data = {
         "pg_makerfaire.jpg",
         "pg_boards2.jpg",
         "pg_open.jpg"
-        // "powerglove.png"
       ],
       "previewImage": "pg_makerfaire.jpg"
     },

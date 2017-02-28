@@ -60,6 +60,9 @@
                     <li class="page-scroll">
                         <a href="#about">About</a>
                     </li>
+                    <li class="page-scroll">
+                        <a href="https://www.dropbox.com/s/4vimhb6sbjs84vr/Resume_Nolan_Moore.pdf">Résumé</a>
+                    </li>
                     <!-- <li class="page-scroll">
                         <a href="#contact">Contact</a>
                     </li> -->
@@ -100,7 +103,8 @@
                     <a href="#portfolioModal{{$index+1}}" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
+                                <i class="fa fa-search-plus fa-2x"></i><br />
+                                {{project.title}}
                             </div>
                         </div>
                         <img src="img/portfolio/{{project.previewImage || 'comingsoon.png'}}" class="img-responsive" alt="">
