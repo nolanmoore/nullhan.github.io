@@ -227,8 +227,10 @@ section.success {
         .portfolio-link {
             display: block;
             position: relative;
-            max-width: 400px;
+            max-width: 325px;
             margin: 0 auto;
+						background-color: #EEEEEE;
+						border: 1px #DDDDDD solid;
             .caption {
                 background: fade(@theme-success, 90%);
                 position: absolute;
@@ -270,6 +272,11 @@ section.success {
     #portfolio {
         .portfolio-item {
             margin: 0 0 30px;
+						.portfolio-link {
+							background-color: #DDDDDD;
+							border: none;
+							box-shadow: 4px 4px 10px #BBBBBB;
+						}
         }
     }
 }
