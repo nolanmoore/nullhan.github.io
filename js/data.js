@@ -3,8 +3,8 @@ const data = {
     {
       "type": "hardware",
       "status": "Complete",
-      "title": "Luci",
-      "info": "The Luci flight controller is designed to give drone developers a platform on which to easily create rich IoT-enabled applications. Luci is powered by the PX4 flight stack as well as an Intel Edison co-processor that hosts the user's application and provides Wi-Fi connectivity.",
+      "title": "Luci Flight Controller",
+      "info": "Luci is an advanced flight controller designed to give drone developers a platform on which to easily create rich IoT-enabled applications. Luci is powered by a powerful Cortex-M4F ARM processor (flashed with a custom build of the PX4 flight stack) as well as an Intel Edison co-processor that hosts the user's application and provides Wi-Fi connectivity.",
       "client": "Dronesmith Technologies",
       "clientLink": "http://dronesmith.io",
       "date": "April 2015",
