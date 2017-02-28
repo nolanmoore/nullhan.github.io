@@ -73,7 +73,7 @@ const data = {
       "type": "hardware",
       "status": "WIP",
       "title": "IoT Alarm Clock",
-      "info": "A small project featuring a Wi-Fi enabled snooze button and a Python-based server, all linked by the MQTT messaging protocol.",
+      "info": "A small project featuring a Wi-Fi enabled snooze button and a Python-based server, linked by the MQTT messaging protocol.",
       "client": "Personal project",
       "clientLink": "",
       "date": "August 2016",
@@ -81,8 +81,10 @@ const data = {
         "IoT",
         "Home"
       ],
-      "images": [],
-      "previewImage": "iotalarmclock.png"
+      "images": [
+        "iotalarmclock_ss.jpg"
+      ],
+      "previewImage": "iotalarmclock_ss.jpg"
     },
     {
       "type": "software",
