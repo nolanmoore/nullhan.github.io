@@ -12,10 +12,10 @@ const data = {
         "UAV development"
       ],
       "images": [
-        "luci.png",
-        "luci_back.png"
+        "luci_opt.png",
+        "luci_back_opt.png"
       ],
-      "previewImage": "luci.png"
+      "previewImage": "luci_opt.png"
     },
     {
       "type": "hardware",
@@ -29,10 +29,10 @@ const data = {
         "UAV development"
       ],
       "images": [
-        "udev.png",
-        "udev_back.png"
+        "udev_opt.png",
+        "udev_back_opt.png"
       ],
-      "previewImage": "udev.png"
+      "previewImage": "udev_opt.png"
     },
     {
       "type": "hardware",
@@ -46,9 +46,9 @@ const data = {
         "UAV development"
       ],
       "images": [
-        "quadesc_v22_trans.png"
+        "quadesc_v22.png"
       ],
-      "previewImage": "quadesc_v22_trans.png"
+      "previewImage": "quadesc_v22.png"
     },
     {
       "type": "hardware",
