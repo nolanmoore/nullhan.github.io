@@ -96,8 +96,8 @@ const data = {
         "Web development"
       ],
       "images": [
-        "happyhour.png",
-        "happyhour_ss.png"
+        "happyhour_ss1.png",
+        "happyhour_ss2.png"
       ],
       "previewImage": "happyhour.png"
     },
