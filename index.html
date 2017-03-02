@@ -99,7 +99,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-4 portfolio-item" data-ng-repeat="project in main.data.projects">
+                <div class="col-sm-4 portfolio-item" data-ng-repeat="project in main.data.projects | filter:true:show">
                     <a href="#portfolioModal{{$index+1}}" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
@@ -124,12 +124,9 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 col-lg-offset-3 text-center">
-                    <p>After graduating from the University of Nevada, Las Vegas with a B.S. in Computer Engineering, I went on to work with Henderson-based UAV startup Dronesmith Technologies to design electronics for custom drones.</p>
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <p>After graduating from the University of Nevada, Las Vegas with a B.S. in Computer Engineering, I went on to work with Henderson-based UAV startup Dronesmith Technologies to design electronics for custom drones. </p>
                 </div>
-                <!-- <div class="col-lg-4">
-                    <p>In my spare time, I hike, work on projects, or try to catch up on a backlog of new things to learn.</p>
-                </div> -->
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <a href="https://www.dropbox.com/s/4vimhb6sbjs84vr/Resume_Nolan_Moore.pdf" class="btn btn-lg btn-outline">
                         <i class="fa fa-download"></i> Résumé
@@ -205,9 +202,9 @@
                     <div class="footer-col col-md-6">
                         <h3>Around the Web</h3>
                         <ul class="list-inline">
-                            <li>
+                            <!-- <li>
                                 <a href="https://www.facebook.com/mrnoln" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
-                            </li>
+                            </li> -->
                             <li>
                                 <a href="https://twitter.com/NolanDoesDrones" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
@@ -272,7 +269,6 @@
                                   <img src="img/portfolio/{{project.images[$index]}}" class="img-responsive img-centered" alt="">
                                 </div>
                               </div>
-                              <!-- <img src="img/portfolio/{{project.images[0] || 'comingsoon.png'}}" class="img-responsive img-centered" alt=""> -->
                               <p ng-bind-html="project.info | renderHTMLCorrectly"></p>
                               <ul class="list-inline item-details">
                                   <li>Client:
@@ -282,7 +278,7 @@
                                       <strong><a href="#">{{project.date}}</a></strong>
                                   </li>
                                   <li>Category:
-                                      <strong><a href="#">{{project.categories[0]}}</a></strong>
+                                      <span class="taglist"><strong><a href="#" data-ng-repeat="cat in project.categories">{{cat}}</a></strong>
                                   </li>
                                   <li>Status:
                                       <strong><a href="#">{{project.status}}</a></strong>

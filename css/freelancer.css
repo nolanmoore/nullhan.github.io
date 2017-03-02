@@ -13,6 +13,12 @@
   color: #F00;
   font-size: 30px;
 }
+.taglist a:after {
+  content: ", ";
+}
+.taglist a:last-child:after {
+  content: "";
+}
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
@@ -214,7 +220,7 @@ section.success {
 #portfolio .portfolio-item .portfolio-link {
   display: block;
   position: relative;
-  max-width: 325px;
+  max-width: 350px;
   margin: 0 auto;
   background-color: #EEEEEE;
   border: 1px #DDDDDD solid;
