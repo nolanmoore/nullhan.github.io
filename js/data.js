@@ -56,6 +56,24 @@ const data = {
     {
       "show": true,
       "type": "hardware",
+      "status": "Complete",
+      "title": "Luci Grove Expansion Board",
+      "info": "An expansion board for the Luci flight controller that gives developers easy options for Grove sensor connectivity and prototypable access to the high density expansion header. Designed in KiCad, manufactured by Accutrace.",
+      "client": "Dronesmith Technologies",
+      "clientLink": "http://dronesmith.io",
+      "date": "January 2015",
+      "categories": [
+        "UAV development"
+      ],
+      "images": [
+        "luci_grove_dev.png",
+        "luci_grove_dev_back.png"
+      ],
+      "previewImage": "luci_grove_dev.png"
+    },
+    {
+      "show": true,
+      "type": "hardware",
       "status": "WIP",
       "title": "Power Glove Controlled Drone",
       "info": "An overhaul of the iconic Power Glove to allow it to control robots, drones or anything your heart desires. It's so... good.<br /><br />Powered by PJRC's Teensy development board and an Espressif ESP8266 Wi-Fi module, the project features custom boards designed to replace the original electronics, making the glove wireless and fully customizable.<br /><br />Build logs, photos and more can be found on the <a href=\"https://hackaday.io/project/8455-power-glove-universal-hid\">project page on Hackaday.io</a>",
