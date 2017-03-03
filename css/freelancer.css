@@ -19,6 +19,11 @@
 .taglist a:last-child:after {
   content: "";
 }
+[class^="sf-"]:before,
+[class*=" sf-"]:before {
+  position: relative;
+  top: 3px;
+}
 body {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
